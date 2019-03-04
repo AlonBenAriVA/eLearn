@@ -1,0 +1,19 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}NCHCS eLearn{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+  <body>
+    <div class = "jumbotron text-center">
+      <h2>Northern California HealthCare System E-Learning Platform</h2>
+      <h4>A video based forum to discuss EMR training</h4>
+    </div>
+    {% block content %}
+  
+    {% endblock %}
+ 
+  </body>
+<html></html>

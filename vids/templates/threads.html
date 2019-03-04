@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%} Discussion Thread{% endblock%}
+
+{% block content%}
+<div class = 'container'>
+  <ol class = 'breadcrumb my-4'>
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Video</a></li>
+    <li class = "breadcrumb-item ">{{vids.name}}</li>
+    <li class = 'breakcrumb-item-active'>Discussion</li>
+ </ol>
+  {% for thread in threads%}
+    <ul>
+        <li>
+        {{thread.discussed_by}}
+      </li>
+
+      <li>
+        {{thread.last_updated}}
+      </li>
+
+      <li>
+        {{thread.thread_content}}
+      </li>
+    </ul>
+  {% endfor %}
+    <a class = 'btn btn-primary' href="{% url 'add_comment' id%}">Add Comment</a>
+</div>
+
+{% endblock%}

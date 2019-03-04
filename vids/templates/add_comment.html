@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a new comment{% endblock %}
+
+  {% block content %}
+  <div class = 'container'>
+      <ol class = 'breadcrumb my-4'>
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Video</a></li>
+          <li class = "breadcrumb-item ">{{id}}</li>
+          <li class = 'breakcrumb-item-active'>Add new comment</li>
+       </ol>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Post</button>
+  </form>
+  </div>
+{% endblock %}
+</div>

@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Topic List{% endblock %}
+{% load static %}
+
+ 
+{% block content %} 
+    <div class = 'container'>
+      <ol class = 'breadcrumb my-4'>
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Video</a></li>
+          <li class = "breadcrumb-item ">{{vids.name}}</li>
+       </ol>
+      <div class = 'container'>
+        <video width = "600" height = "340" controls>
+          <source src = "{% static vids.video_file %}" type = "video/ogg">
+        </video>
+      </div>
+      <div class = 'container'>
+        Discussion  threads
+      </div>
+      
+      {%for d in discussion%}
+      <ul>
+        <li>
+          
+          <a href="{% url 'get_thread' d.pk %}">{{d}}</a>
+          
+        </li>
+      </ul>
+      {% endfor %}
+      <a class = "btn btn-primary" href="{% url 'new_topic' pk %}">Add New Topic</a>
+  </div>
+  {% endblock %}
+ 
